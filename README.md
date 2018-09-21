@@ -1,7 +1,7 @@
 go-letter-range
 ==
 
-[![Build Status](https://travis-ci.org/moznion/go-letter-range.svg?branch=master)](https://travis-ci.org/moznion/go-letter-range) [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range)
+[![Build Status](https://travis-ci.org/moznion/go-letter-range.svg?branch=master)](https://travis-ci.org/moznion/go-letter-range) [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range/letterrange)
 
 A library that lists letters according to specified letters range.
 
@@ -49,7 +49,7 @@ func main() {
 Docs
 --
 
-Please see: [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range)
+Please see: [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range/letterrange)
 
 License
 --
