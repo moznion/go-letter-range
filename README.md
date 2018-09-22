@@ -18,7 +18,7 @@ import (
 )
 
 func main() {
-	got, err := lister.GetRunesWithinRange('a', 'z')
+	got, err := lister.ListRunesWithinRange('a', 'z')
 	if err != nil {
 		// do error handling
 		return
@@ -37,7 +37,7 @@ import (
 )
 
 func main() {
-	got, err := lister.GetRunesWithinRangeString("u{0061}-u{007A}")
+	got, err := lister.ListRunesWithinRangeString("u{0061}-u{007A}")
 	if err != nil {
 		// do error handling
 		return
