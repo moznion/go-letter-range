@@ -1,7 +1,7 @@
-go-letter-range
+go-letter-range-lister
 ==
 
-[![Build Status](https://travis-ci.org/moznion/go-letter-range.svg?branch=master)](https://travis-ci.org/moznion/go-letter-range) [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range/letterrange)
+[![Build Status](https://travis-ci.org/moznion/go-letter-range-lister.svg?branch=master)](https://travis-ci.org/moznion/go-letter-range-lister) [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range-lister/lister)
 
 A library that lists letters according to specified letters range.
 
@@ -14,11 +14,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/moznion/go-letter-range/letterrange"
+	"github.com/moznion/go-letter-range-lister/lister"
 )
 
 func main() {
-	got, err := letterrange.GetRunesWithinRange('a', 'z')
+	got, err := lister.GetRunesWithinRange('a', 'z')
 	if err != nil {
 		// do error handling
 		return
@@ -33,11 +33,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/moznion/go-letter-range/letterrange"
+	"github.com/moznion/go-letter-range-lister/lister"
 )
 
 func main() {
-	got, err := GetRunesWithinRangeString("u{0061}-u{007A}")
+	got, err := lister.GetRunesWithinRangeString("u{0061}-u{007A}")
 	if err != nil {
 		// do error handling
 		return
@@ -49,7 +49,7 @@ func main() {
 Docs
 --
 
-Please see: [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range/letterrange)
+Please see: [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](http://godoc.org/github.com/moznion/go-letter-range-lister/lister)
 
 License
 --

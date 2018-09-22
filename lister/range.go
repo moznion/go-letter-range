@@ -1,4 +1,5 @@
-package letterrange
+// Package lister provides some functions to list letters according to specified letters range.
+package lister
 
 import (
 	"errors"
@@ -7,8 +8,8 @@ import (
 	"strconv"
 )
 
-// GetRunesWithinRange returns the rune slice that contains letters within the specified range.
-func GetRunesWithinRange(from, to rune) ([]rune, error) {
+// ListRunesWithinRange returns the rune slice that contains letters within the specified range.
+func ListRunesWithinRange(from, to rune) ([]rune, error) {
 	if from > to {
 		return nil, errors.New("`from` is bigger than `to`: `from` must be smaller than `to`")
 	}
@@ -23,8 +24,8 @@ func GetRunesWithinRange(from, to rune) ([]rune, error) {
 	return rs, nil
 }
 
-// GetStringsWithinRange returns the string slice that contains letters within the specified range.
-func GetStringsWithinRange(from, to rune) ([]string, error) {
+// ListStringsWithinRange returns the string slice that contains letters within the specified range.
+func ListStringsWithinRange(from, to rune) ([]string, error) {
 	if from > to {
 		return nil, errors.New("`from` is bigger than `to`: `from` must be smaller than `to`")
 	}
@@ -39,26 +40,26 @@ func GetStringsWithinRange(from, to rune) ([]string, error) {
 	return ss, nil
 }
 
-// GetRunesWithinRangeString returns the rune slice that contains letters within the specified range-string.
+// ListRunesWithinRangeString returns the rune slice that contains letters within the specified range-string.
 // Range-string must have following format: `u{hex}-u{hex}`. The first hex is handled as `from` and the second one is handles as `to`.
-func GetRunesWithinRangeString(rangeString string) ([]rune, error) {
+func ListRunesWithinRangeString(rangeString string) ([]rune, error) {
 	from, to, err := extractRangeFromRangeString(rangeString)
 	if err != nil {
 		return nil, err
 	}
 
-	return GetRunesWithinRange(from, to)
+	return ListRunesWithinRange(from, to)
 }
 
-// GetStringsWithinRangeString returns the string slice that contains letters within the specified range-string.
+// ListStringsWithinRangeString returns the string slice that contains letters within the specified range-string.
 // Range-string must have following format: `u{hex}-u{hex}`. The first hex is handled as `from` and the second one is handles as `to`.
-func GetStringsWithinRangeString(rangeString string) ([]string, error) {
+func ListStringsWithinRangeString(rangeString string) ([]string, error) {
 	from, to, err := extractRangeFromRangeString(rangeString)
 	if err != nil {
 		return nil, err
 	}
 
-	return GetStringsWithinRange(from, to)
+	return ListStringsWithinRange(from, to)
 }
 
 var rangeStringRe = regexp.MustCompile("^u{([0-9a-fA-F]+)}-u{([0-9a-fA-F]+)}$")

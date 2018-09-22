@@ -1,4 +1,4 @@
-package letterrange
+package lister
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
-func TestGetRunesWithinRangeShouldBeSuccess(t *testing.T) {
-	got, err := GetRunesWithinRange('a', 'z')
+func TestListRunesWithinRangeShouldBeSuccess(t *testing.T) {
+	got, err := ListRunesWithinRange('a', 'z')
 	if err != nil {
 		t.Fatal("err is not nil")
 	}
@@ -22,8 +22,8 @@ func TestGetRunesWithinRangeShouldBeSuccess(t *testing.T) {
 	}
 }
 
-func TestGetRunesWithinRangeShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
-	got, err := GetRunesWithinRange('z', 'a')
+func TestListRunesWithinRangeShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
+	got, err := ListRunesWithinRange('z', 'a')
 	if err == nil {
 		t.Fatal("err is nil")
 	}
@@ -34,8 +34,8 @@ func TestGetRunesWithinRangeShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
 	}
 }
 
-func TestGetStringsWithinRangeShouldBeSuccess(t *testing.T) {
-	got, err := GetStringsWithinRange('a', 'z')
+func TestListStringsWithinRangeShouldBeSuccess(t *testing.T) {
+	got, err := ListStringsWithinRange('a', 'z')
 	if err != nil {
 		t.Fatal("err is not nil")
 	}
@@ -50,8 +50,8 @@ func TestGetStringsWithinRangeShouldBeSuccess(t *testing.T) {
 	}
 }
 
-func TestGetStringsWithinRangeShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
-	got, err := GetStringsWithinRange('z', 'a')
+func TestListStringsWithinRangeShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
+	got, err := ListStringsWithinRange('z', 'a')
 	if err == nil {
 		t.Fatal("err is nil")
 	}
@@ -62,8 +62,8 @@ func TestGetStringsWithinRangeShouldBeFailWhenFromAndToAreInverted(t *testing.T)
 	}
 }
 
-func TestGetRunesWithinRangeStringShouldBeSuccess(t *testing.T) {
-	got, err := GetRunesWithinRangeString(`u{3041}-u{304A}`)
+func TestListRunesWithinRangeStringShouldBeSuccess(t *testing.T) {
+	got, err := ListRunesWithinRangeString(`u{3041}-u{304A}`)
 	if err != nil {
 		t.Fatal("err is not nil")
 	}
@@ -78,8 +78,8 @@ func TestGetRunesWithinRangeStringShouldBeSuccess(t *testing.T) {
 	}
 }
 
-func TestGetStringsWithinRangeStringShouldBeSuccess(t *testing.T) {
-	got, err := GetStringsWithinRangeString(`u{3041}-u{304A}`)
+func TestListStringsWithinRangeStringShouldBeSuccess(t *testing.T) {
+	got, err := ListStringsWithinRangeString(`u{3041}-u{304A}`)
 	if err != nil {
 		t.Fatal("err is not nil")
 	}
@@ -94,8 +94,8 @@ func TestGetStringsWithinRangeStringShouldBeSuccess(t *testing.T) {
 	}
 }
 
-func TestGetStringsWithinRangeStringShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
-	got, err := GetStringsWithinRangeString(`u{304A}-u{3041}`)
+func TestListStringsWithinRangeStringShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
+	got, err := ListStringsWithinRangeString(`u{304A}-u{3041}`)
 	if err == nil {
 		t.Fatal("err is nil")
 	}
@@ -106,8 +106,8 @@ func TestGetStringsWithinRangeStringShouldBeFailWhenFromAndToAreInverted(t *test
 	}
 }
 
-func TestGetRunesWithinRangeStringWithEmojiShouldBeSuccess(t *testing.T) {
-	got, err := GetRunesWithinRangeString(`u{1F98A}-u{1F98D}`)
+func TestListRunesWithinRangeStringWithEmojiShouldBeSuccess(t *testing.T) {
+	got, err := ListRunesWithinRangeString(`u{1F98A}-u{1F98D}`)
 	if err != nil {
 		t.Fatal("err is not nil")
 	}
@@ -122,8 +122,8 @@ func TestGetRunesWithinRangeStringWithEmojiShouldBeSuccess(t *testing.T) {
 	}
 }
 
-func TestGetStringsWithinRangeStringWithEmojiShouldBeSuccess(t *testing.T) {
-	got, err := GetStringsWithinRangeString(`u{1F98A}-u{1F98D}`)
+func TestListStringsWithinRangeStringWithEmojiShouldBeSuccess(t *testing.T) {
+	got, err := ListStringsWithinRangeString(`u{1F98A}-u{1F98D}`)
 	if err != nil {
 		t.Fatal("err is not nil")
 	}
@@ -138,8 +138,8 @@ func TestGetStringsWithinRangeStringWithEmojiShouldBeSuccess(t *testing.T) {
 	}
 }
 
-func TestGetRunesWithinRangeStringShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
-	got, err := GetRunesWithinRangeString(`u{304A}-u{3041}`)
+func TestListRunesWithinRangeStringShouldBeFailWhenFromAndToAreInverted(t *testing.T) {
+	got, err := ListRunesWithinRangeString(`u{304A}-u{3041}`)
 	if err == nil {
 		t.Fatal("err is nil")
 	}
@@ -150,8 +150,8 @@ func TestGetRunesWithinRangeStringShouldBeFailWhenFromAndToAreInverted(t *testin
 	}
 }
 
-func TestGetRunesWithinRangeStringShouldBeFailWhenRangeStringIsInvalid(t *testing.T) {
-	got, err := GetRunesWithinRangeString(`INVA-LID`)
+func TestListRunesWithinRangeStringShouldBeFailWhenRangeStringIsInvalid(t *testing.T) {
+	got, err := ListRunesWithinRangeString(`INVA-LID`)
 	if err == nil {
 		t.Fatal("err is nil")
 	}
@@ -162,8 +162,8 @@ func TestGetRunesWithinRangeStringShouldBeFailWhenRangeStringIsInvalid(t *testin
 	}
 }
 
-func TestGetStringsWithinRangeStringShouldBeFailWhenRangeStringIsInvalid(t *testing.T) {
-	got, err := GetStringsWithinRangeString(`INVA-LID`)
+func TestListStringsWithinRangeStringShouldBeFailWhenRangeStringIsInvalid(t *testing.T) {
+	got, err := ListStringsWithinRangeString(`INVA-LID`)
 	if err == nil {
 		t.Fatal("err is nil")
 	}

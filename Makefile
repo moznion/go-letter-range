@@ -12,10 +12,10 @@ vet:
 	go vet ./...
 
 fmt-check:
-	gofmt -l -s letterrange/*.go | grep [^*][.]go$$; \
+	gofmt -l -s lister/*.go | grep [^*][.]go$$; \
 	EXIT_CODE=$$?; \
 	if [ $$EXIT_CODE -eq 0 ]; then exit 1; fi
 
 fmt:
-	gofmt -w -s letterrange/*.go
+	gofmt -w -s lister/*.go
 
